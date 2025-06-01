@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>$ZULA | Il Richiamo</title>
+  <title>$ZULA | Profezia Attiva</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
@@ -73,18 +73,15 @@
       box-shadow: 0 0 30px #00ffff;
     }
 
-    .counter {
+    .counter, .countdown, .prophecy {
       font-size: 1.6em;
-      margin-top: 3em;
-      color: #ff00ff;
+      margin-top: 2em;
       text-shadow: 0 0 10px #ff00ff;
     }
 
-    .countdown {
-      font-size: 2em;
-      margin-top: 0.5em;
-      color: #ff6600;
-      text-shadow: 0 0 15px #ff6600;
+    .prophecy {
+      color: #ffcc00;
+      font-style: italic;
     }
   </style>
 </head>
@@ -104,6 +101,7 @@
 
   <div class="counter">Holders attivi: 7.285+ in crescita costante...</div>
   <div class="countdown" id="countdown"></div>
+  <div class="prophecy" id="prophecy">Profezia inizializzata...</div>
 
   <audio autoplay loop>
     <source src="https://files.catbox.moe/7czj96.mp3" type="audio/mpeg">
@@ -128,8 +126,22 @@
         document.getElementById("countdown").innerHTML = "🔥 È IL MOMENTO DI PUMPARE 🔥";
       }
     }
-
     setInterval(updateCountdown, 1000);
+
+    // Oracle: genera profezie casuali
+    const prophecies = [
+      "Solo chi osa ZULA vedrà il nuovo ciclo.",
+      "Il pump verrà come un fulmine al chiaro cielo.",
+      "Non fidarti dei grafici. Fidati del fuoco.",
+      "ZULA guiderà gli spiriti ribelli alla gloria.",
+      "Ogni wallet in ZULA è un sigillo eterno."
+    ];
+
+    function updateProphecy() {
+      const prophecy = prophecies[Math.floor(Math.random() * prophecies.length)];
+      document.getElementById("prophecy").innerText = prophecy;
+    }
+    setInterval(updateProphecy, 8000);
   </script>
 </body>
 </html>
