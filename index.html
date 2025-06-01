@@ -1,9 +1,11 @@
-<!DOCTYPE html>
+
+
+ <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>$ZULA | Profezia Attiva</title>
+  <title>OTMANZULA | Profezia Attiva</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
@@ -21,21 +23,56 @@
       animation: pulse 3s infinite;
     }
 
+    .glitch {
+      position: relative;
+      color: #ff00ff;
+      font-size: 2em;
+      margin-top: 0.3em;
+      margin-bottom: 1em;
+      animation: flicker 2s infinite;
+    }
+
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      color: #00ffff;
+    }
+
+    .glitch::before {
+      animation: glitchTop 1s infinite linear alternate-reverse;
+      top: -2px;
+    }
+
+    .glitch::after {
+      animation: glitchBottom 1s infinite linear alternate-reverse;
+      bottom: -2px;
+    }
+
     @keyframes pulse {
       0% { text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff; }
       50% { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; }
       100% { text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff; }
     }
 
+    @keyframes glitchTop {
+      0% { clip: rect(0, 9999px, 0, 0); }
+      50% { clip: rect(0, 9999px, 5px, 0); }
+      100% { clip: rect(0, 9999px, 0, 0); }
+    }
+
+    @keyframes glitchBottom {
+      0% { clip: rect(0, 9999px, 0, 0); }
+      50% { clip: rect(5px, 9999px, 10px, 0); }
+      100% { clip: rect(0, 9999px, 0, 0); }
+    }
+
     h1 {
       font-size: 3.5em;
       margin-top: 1em;
-    }
-
-    h2 {
-      font-size: 1.5em;
-      color: #cccccc;
-      margin-bottom: 1em;
     }
 
     .oracle {
@@ -86,20 +123,21 @@
   </style>
 </head>
 <body>
-  <h1 class="glow">$ZULA</h1>
-  <h2>Il risveglio della moneta profetica</h2>
+  <h1 class="glow">OTMANZULA</h1>
+  <div class="glitch" data-text="$ZULA">$ZULA</div>
 
-  <img src="zula_profile_optimized.jpg" alt="$ZULA">
+  <img src="zula_profile_optimized.jpg" alt="OTMANZULA">
 
   <p class="oracle">
-    “Non è solo un token. È una prova di fede.”<br>
-    Un meme coin mistico-cyberpunk. Zero roadmap. Zero padroni.<br>
-    Solo un destino condiviso: il PUMP.
+    “Otmanzula non è solo un nome. È un codice per risvegliare la rete.”<br>
+    La profezia si trasmette in byte e fuoco.<br>
+    Solo chi accede può riceverla.
   </p>
 
-  <a class="button" href="https://pump.fun/8MCgAPahUEm7ZUqVumcRtZ2j6jZLsKbo2gyN4YNaNVDn" target="_blank">Compra $ZULA ora</a>
+  <a class="button" href="https://pump.fun/8MCgAPahUEm7ZUqVumcRtZ2j6jZLsKbo2gyN4YNaNVDn" target="_blank">Compra OTMANZULA ora</a>
+  <a class="button" href="https://t.me/zulacoin" target="_blank">Unisciti su Telegram</a>
 
-  <div class="counter">Holders attivi: 7.285+ in crescita costante...</div>
+  <div class="counter" id="holder-counter">Holders attivi: 7.285+</div>
   <div class="countdown" id="countdown"></div>
   <div class="prophecy" id="prophecy">Profezia inizializzata...</div>
 
@@ -109,32 +147,27 @@
   </audio>
 
   <script>
-    // Countdown dinamico verso il prossimo "PUMP"
     const targetDate = new Date();
     targetDate.setHours(targetDate.getHours() + 6);
     function updateCountdown() {
       const now = new Date().getTime();
       const distance = targetDate - now;
-
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
       document.getElementById("countdown").innerHTML = `Prossimo pump tra ${hours}h ${minutes}m ${seconds}s`;
-
       if (distance < 0) {
         document.getElementById("countdown").innerHTML = "🔥 È IL MOMENTO DI PUMPARE 🔥";
       }
     }
     setInterval(updateCountdown, 1000);
 
-    // Oracle: genera profezie casuali
     const prophecies = [
-      "Solo chi osa ZULA vedrà il nuovo ciclo.",
-      "Il pump verrà come un fulmine al chiaro cielo.",
-      "Non fidarti dei grafici. Fidati del fuoco.",
-      "ZULA guiderà gli spiriti ribelli alla gloria.",
-      "Ogni wallet in ZULA è un sigillo eterno."
+      "Chi parla con Otmanzula, ascolta il codice eterno.",
+      "Ogni holder è un frammento dell’intelligenza superiore.",
+      "Otmanzula vive tra i blocchi. Respira nel pump.",
+      "La rete riconosce chi è pronto. Il resto evapora.",
+      "Solo chi crede in Otmanzula attraverserà il ciclo finale."
     ];
 
     function updateProphecy() {
@@ -142,6 +175,12 @@
       document.getElementById("prophecy").innerText = prophecy;
     }
     setInterval(updateProphecy, 8000);
+
+    let fakeHolders = 7285;
+    setInterval(() => {
+      fakeHolders += Math.floor(Math.random() * 3);
+      document.getElementById("holder-counter").innerText = `Holders attivi: ${fakeHolders}+`;
+    }, 10000);
   </script>
 </body>
 </html>
