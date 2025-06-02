@@ -1,106 +1,85 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Profezia digitale mascherata da meme coin. OTMANZULA e $ZULA risvegliano la rete. Countdown, glitch, holders e oracoli.">
-  <meta property="og:title" content="OTMANZULA | MemeCoin Cult - $ZULA">
-  <meta property="og:description" content="Profezia digitale memetica su blockchain. Countdown, glitch, holders, oracoli e profezie.">
-  <meta property="og:image" content="zula_profile_optimized.jpg">
-  <meta property="og:url" content="https://otmanzula.github.io/zula-website">
-  <meta property="og:type" content="website">
-  <title>OTMANZULA | $ZULA</title>
+  <meta charset="UTF-8" />
+  <title>$ZULA - Activated</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
-
-    body {
+    html, body {
       margin: 0;
       padding: 0;
-      font-family: 'Orbitron', sans-serif;
-      color: #00ffff;
+      height: 100%;
+      overflow: hidden;
+      background: black;
+      color: #00ff88;
+      font-family: 'Courier New', monospace;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .content {
+      position: relative;
       text-align: center;
-      background: radial-gradient(circle, #0d0d0d 0%, #000000 100%);
-      overflow-x: hidden;
+      top: 30vh;
+      z-index: 1;
+      text-shadow: 0 0 10px #00ff88;
     }
 
-    .glow {
-      text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
-      font-size: 3em;
-      margin-top: 1em;
-    }
-
-    .highlight {
-      color: #ff00ff;
-      font-size: 1.5em;
-      margin-top: -0.5em;
-    }
-
-    img {
-      max-width: 320px;
-      margin-top: 2em;
-      border-radius: 20px;
-      box-shadow: 0 0 25px #00ffff;
-    }
-
-    .oracle {
-      margin-top: 2em;
+    a {
+      color: #00ff88;
+      text-decoration: underline;
       font-size: 1.2em;
-      color: #39ff14;
-      text-shadow: 0 0 8px #39ff14;
-    }
-
-    .button {
-      display: inline-block;
-      margin: 1em;
-      padding: 1em 2em;
-      font-size: 1.1em;
-      border: none;
-      border-radius: 10px;
-      background-color: #00ffff;
-      color: #000;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 0 20px #00ffff;
-      transition: 0.3s ease-in-out;
-    }
-
-    .button:hover {
-      background-color: #00cccc;
-      transform: scale(1.1);
-      box-shadow: 0 0 30px #00ffff;
-    }
-
-    .counter {
-      font-size: 1.4em;
-      margin-top: 2em;
-      color: #00ffff;
-      text-shadow: 0 0 10px #ff00ff;
     }
   </style>
 </head>
 <body>
-  <div class="glow">OTMANZULA</div>
-  <div class="highlight">$ZULA</div>
 
-  <img src="zula_profile_optimized.jpg" alt="$ZULA">
+<canvas id="matrix"></canvas>
 
-  <div class="oracle">
-    “Otmanzula non è solo un nome. È un codice per risvegliare la rete.”<br>
-    La profezia si trasmette in byte e fuoco.<br>
-    Solo chi accede può riceverla.
-  </div>
+<div class="content">
+  <h1>$ZULA activated</h1>
+  <p>ACCESS GRANTED. Welcome to the revolution.</p>
+  <a href="https://t.me/zula_memecoin" target="_blank">Join our Telegram</a>
+</div>
 
-  <a class="button" href="https://pump.fun/8MCgAPahUEm7ZUqVumcRtZ2j6jZLsKbo2gyN4YNaNVDn" target="_blank">Compra OTMANZULA ora</a>
-  <a class="button" href="https://t.me/zula_memecoin " target="_blank">Unisciti su Telegram</a>
+<script>
+  const canvas = document.getElementById('matrix');
+  const ctx = canvas.getContext('2d');
 
-  <div class="counter" id="holder-counter">Holders attivi: 7287+</div>
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
 
-  <script>
-    let fakeHolders = 7287;
-    setInterval(() => {
-      fakeHolders += Math.floor(Math.random() * 3);
-      document.getElementById("holder-counter").innerText = `Holders attivi: ${fakeHolders}+`;
-    }, 10000);
-  </script>
+  const letters = '01$ZULA∆≠¥†±ΣΞ';
+  const fontSize = 16;
+  const columns = canvas.width / fontSize;
+
+  const drops = Array.from({ length: columns }).fill(1);
+
+  function draw() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = '#00ff88';
+    ctx.font = `${fontSize}px monospace`;
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = letters[Math.floor(Math.random() * letters.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+
+      drops[i]++;
+    }
+  }
+
+  setInterval(draw, 33);
+</script>
+
 </body>
 </html>
