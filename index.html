@@ -76,6 +76,13 @@
       color: #00ffff;
       text-shadow: 0 0 10px #ff00ff;
     }
+
+    .prophecy-box {
+      margin-top: 2em;
+      color: #ffcc00;
+      font-size: 1.3em;
+      text-shadow: 0 0 8px #ffcc00;
+    }
   </style>
 </head>
 <body>
@@ -94,6 +101,7 @@
   <a class="button" href="https://t.me/zula_memecoin" target="_blank">Unisciti su Telegram</a>
 
   <div class="counter" id="holder-counter">Holders attivi: 7287+</div>
+  <div class="prophecy-box" id="dynamic-prophecy">In attesa della prossima visione...</div>
 
   <script>
     let fakeHolders = 7287;
@@ -101,6 +109,27 @@
       fakeHolders += Math.floor(Math.random() * 3);
       document.getElementById("holder-counter").innerText = `Holders attivi: ${fakeHolders}+`;
     }, 10000);
+
+    const prophecies = [
+      "Otmanzula parla solo a chi è pronto a perdere tutto.",
+      "I veri memer non comprano, ascendono.",
+      "$ZULA vive nel codice, ma comanda nelle emozioni.",
+      "Chi tocca la blockchain, tocca l’eternità.",
+      "La profezia cambia. Ma Otmanzula rimane.",
+      "Ogni click su Pump è un passo verso il glitch.",
+      "Otmanzula ti osserva. Anche se tu non credi.",
+      "Solo chi sogna il pump, merita il pump.",
+      "Il silenzio del wallet nasconde la voce della profezia.",
+      "Una moneta. Una missione. Una mistica discesa."
+    ];
+
+    function updateProphecy() {
+      const p = prophecies[Math.floor(Math.random() * prophecies.length)];
+      document.getElementById("dynamic-prophecy").innerText = p;
+    }
+
+    updateProphecy();
+    setInterval(updateProphecy, 60000);
   </script>
 </body>
 </html>
