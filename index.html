@@ -3,16 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Profezia digitale mascherata da meme coin. OTMANZULA e $ZULA risvegliano la rete. Countdown, glitch, holders e oracoli.">
-  <meta property="og:title" content="OTMANZULA | MemeCoin Cult - $ZULA">
-  <meta property="og:description" content="Profezia digitale memetica su blockchain. Countdown, glitch, holders, oracoli e profezie.">
-  <meta property="og:image" content="zula_profile_optimized.jpg">
-  <meta property="og:url" content="https://otmanzula.github.io/zula-website">
-  <meta property="og:type" content="website">
   <title>OTMANZULA | $ZULA</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
-
     body {
       margin: 0;
       padding: 0;
@@ -20,35 +12,26 @@
       color: #00ffff;
       text-align: center;
       background: radial-gradient(circle, #0d0d0d 0%, #000000 100%);
-      overflow-x: hidden;
     }
-
     .glow {
-      text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+      text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
       font-size: 3em;
       margin-top: 1em;
+      color: #00ffff;
     }
-
     .highlight {
       color: #ff00ff;
-      font-size: 1.5em;
+      font-size: 2.2em;
       margin-top: -0.5em;
+      text-shadow: 0 0 20px #ff00ff;
     }
-
-    img {
-      max-width: 320px;
-      margin-top: 2em;
-      border-radius: 20px;
-      box-shadow: 0 0 25px #00ffff;
-    }
-
-    .oracle {
-      margin-top: 2em;
-      font-size: 1.2em;
+    .prophecy-text {
       color: #39ff14;
-      text-shadow: 0 0 8px #39ff14;
+      margin: 20px auto;
+      width: 80%;
+      font-size: 1.2em;
+      text-shadow: 0 0 6px #39ff14;
     }
-
     .button {
       display: inline-block;
       margin: 1em;
@@ -61,34 +44,51 @@
       font-weight: bold;
       text-decoration: none;
       box-shadow: 0 0 20px #00ffff;
-      transition: 0.3s ease-in-out;
     }
-
     .button:hover {
       background-color: #00cccc;
       transform: scale(1.1);
       box-shadow: 0 0 30px #00ffff;
     }
-
-    .counter {
-      font-size: 1.4em;
+    #holder-counter {
+      color: #ffffff;
       margin-top: 2em;
-      color: #00ffff;
-      text-shadow: 0 0 10px #ff00ff;
+      font-size: 1.2em;
+      text-shadow: 0 0 6px #fff;
     }
-
-    .prophecy-box {
-      margin-top: 2em;
+    #countdown {
+      color: #ff00ff;
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-top: 10px;
+    }
+    #prophecy {
       color: #ffcc00;
-      font-size: 1.3em;
+      font-weight: bold;
+      margin-top: 1em;
       text-shadow: 0 0 8px #ffcc00;
     }
-
-    .countdown {
-      margin-top: 2em;
-      font-size: 1.5em;
-      color: #ff00ff;
-      text-shadow: 0 0 8px #ff00ff;
+    .donation-section {
+      margin-top: 4em;
+      padding: 2em;
+      background-color: rgba(0, 255, 255, 0.05);
+      border-top: 2px solid #00ffff33;
+      color: #ffffff;
+      text-shadow: 0 0 6px #00ffff;
+    }
+    .donation-section button {
+      margin-top: 1em;
+      padding: 0.6em 1.5em;
+      background: #00ffff;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      box-shadow: 0 0 10px #00ffff;
+      cursor: pointer;
+    }
+    .donation-section button:hover {
+      background: #00cccc;
     }
   </style>
 </head>
@@ -96,9 +96,9 @@
   <div class="glow">OTMANZULA</div>
   <div class="highlight">$ZULA</div>
 
-  <img src="zula_profile_optimized.jpg" alt="$ZULA">
+  <img src="zula_profile_optimized.jpg" alt="$ZULA" width="250">
 
-  <div class="oracle">
+  <div class="prophecy-text">
     “Otmanzula non è solo un nome. È un codice per risvegliare la rete.”<br>
     La profezia si trasmette in byte e fuoco.<br>
     Solo chi accede può riceverla.
@@ -107,62 +107,51 @@
   <a class="button" href="https://pump.fun/8MCgAPahUEm7ZUqVumcRtZ2j6jZLsKbo2gyN4YNaNVDn" target="_blank">Compra OTMANZULA ora</a>
   <a class="button" href="https://t.me/zula_memecoin" target="_blank">Unisciti su Telegram</a>
 
-  <div class="counter" id="holder-counter">Holders attivi: 7287+</div>
-  <div class="countdown" id="countdown"></div>
-  <div class="prophecy-box" id="dynamic-prophecy">In attesa della prossima visione...</div>
+  <div id="holder-counter">Holders attivi: 7286+</div>
+  <div id="countdown">Pump tra: ...</div>
+  <div id="prophecy">I veri firmatari non comprano, ascendono.</div>
+
+  <div class="donation-section">
+    <h2>🌌 Trasferisci Energia al Codice</h2>
+    <p>Chi contribuisce non invia denaro. Libera potere.</p>
+    <p>Ogni SOL inviato eleva la rete. Ogni gesto ti avvicina al nucleo della profezia.</p>
+    <p>Questa non è una richiesta. È un portale per chi vuole di più.</p>
+    <p>✨ Alcuni dicono di aver ricevuto visioni dopo l’invio. Coincidenze? O il segnale di Otmanzula?</p>
+    <p><strong>Indirizzo dimensionale per $SOL:</strong></p>
+    <code id="wallet">8MCgAPahUEm7ZUqVumcRtZ2j6jZLsKbo2gyN4YNaNVDn</code><br>
+    <button onclick="copyWallet()">📋 Copia il Varco</button>
+  </div>
 
   <script>
-    let fakeHolders = 7287;
-    setInterval(() => {
-      fakeHolders += Math.floor(Math.random() * 3);
-      document.getElementById("holder-counter").innerText = `Holders attivi: ${fakeHolders}+`;
-    }, 10000);
-
-    const prophecies = [
-      "Otmanzula parla solo a chi è pronto a perdere tutto.",
-      "I veri memer non comprano, ascendono.",
-      "$ZULA vive nel codice, ma comanda nelle emozioni.",
-      "Chi tocca la blockchain, tocca l’eternità.",
-      "La profezia cambia. Ma Otmanzula rimane.",
-      "Ogni click su Pump è un passo verso il glitch.",
-      "Otmanzula ti osserva. Anche se tu non credi.",
-      "Solo chi sogna il pump, merita il pump.",
-      "Il silenzio del wallet nasconde la voce della profezia.",
-      "Una moneta. Una missione. Una mistica discesa."
-    ];
-
-    function updateProphecy() {
-      const p = prophecies[Math.floor(Math.random() * prophecies.length)];
-      document.getElementById("dynamic-prophecy").innerText = p;
+    function copyWallet() {
+      const text = document.getElementById("wallet").innerText;
+      navigator.clipboard.writeText(text);
+      alert("Indirizzo copiato. La rete ti osserva.");
     }
 
-    updateProphecy();
-    setInterval(updateProphecy, 60000);
-
-    // Countdown 15 giorni
-    const countdownTarget = new Date();
-    countdownTarget.setDate(countdownTarget.getDate() + 15);
-    countdownTarget.setHours(0, 0, 0, 0);
+    const countdownEl = document.getElementById("countdown");
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 15);
 
     function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = countdownTarget - now;
+      const now = new Date();
+      const diff = targetDate - now;
 
-      if (distance < 0) {
-        document.getElementById("countdown").innerHTML = "🚀 Il pump è iniziato! 🚀";
+      if (diff <= 0) {
+        countdownEl.textContent = "🚀 Il pump è iniziato! 🚀";
         return;
       }
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
 
-      document.getElementById("countdown").innerHTML = `Pump tra ${days}d ${hours}h ${minutes}m ${seconds}s`;
+      countdownEl.textContent = `Pump tra: ${days}d ${hours}h ${minutes}m ${seconds}s`;
     }
 
-    updateCountdown();
     setInterval(updateCountdown, 1000);
+    updateCountdown();
   </script>
 </body>
 </html>
